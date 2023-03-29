@@ -1,0 +1,147 @@
+using System;
+using System.Windows.Forms;
+
+namespace practico_1_3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private int contador = 0;
+        private void btnCalcular_Click(object sender, System.EventArgs e)
+        {
+            if (txbPrimerNum.Text != "" || txbSegundoNum.Text != "" || txbTercerNum.Text != "")
+            {
+                int num1 = Convert.ToInt32(txbPrimerNum.Text);
+                int num2 = Convert.ToInt32(txbSegundoNum.Text);
+                int num3 = Convert.ToInt32(txbTercerNum.Text);
+
+                if (num1 < 0)
+                {
+                    int res = num1 * num2 * num3;
+                    labResultado.Text = (res.ToString());
+                }
+                else
+                {
+                    int res = num1 + num2 + num3;
+                    labResultado.Text = (res.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Asegúrese de que los campos de texto marcados en rojo, estén llenos");
+            }
+
+        }
+
+        private void txbPrimerNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txbSegundoNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txbTercerNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsPunctuation(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbPrimerNum_TextChanged(object sender, System.EventArgs e)
+        {
+            if (txbPrimerNum.Text != "")
+            {
+                label3.Visible = false;
+            }
+            else
+            {
+                label3.Visible = true;
+            }
+        }
+
+        private void txbSegundoNum_TextChanged(object sender, System.EventArgs e)
+        {
+            if (txbSegundoNum.Text != "")
+            {
+                label4.Visible = false;
+            }
+            else
+            {
+                label4.Visible = true;
+            }
+        }
+
+        private void txbTercerNum_TextChanged(object sender, System.EventArgs e)
+        {
+            if (txbTercerNum.Text != "")
+            {
+                label5.Visible = false;
+            }
+            else
+            {
+                label5.Visible = true;
+            }
+        }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+            ToolTip hint = new ToolTip();
+            hint.SetToolTip(label3, "Campo obligatorio");
+            hint.SetToolTip(label4, "Campo olbigatorio");
+            hint.SetToolTip(label5, "Campo obligatorio");
+            hint.SetToolTip(btnCalcular, "Calcula los 3 numeros ingresados");
+            hint.SetToolTip(labEasterEgg, "hmm... Parece ser que alguien ya descubrió que me gusta meter estas cosas en mis programitas\nPero lo lamento, esto es todo lo que hay en este.");
+            hint.SetToolTip(labElCreadoryYaEsta, "No, no pasará nada si apretas click");
+
+            hint.Active = true;
+
+        }
+
+        private void labElCreadoryYaEsta_Click(object sender, EventArgs e)
+        {
+            if (contador == 0)
+            {
+                labElCreadoryYaEsta.Text = "O quizás si?";
+
+                var temporizador = new System.Windows.Forms.Timer();
+                temporizador.Interval = 5000;
+                temporizador.Tick += (s, args) =>
+                {
+
+                    labElCreadoryYaEsta.Text = "Productos 'El Gori'";
+                    temporizador.Stop();
+
+
+                };
+                temporizador.Start();
+                contador++;
+
+            }
+            else
+            {
+                contador = 0;
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Consigna:\nIdear una aplicación que solicite el ingreso de tres números; si el primero\r\nes negativo, debe mostrar el producto de los tres, y si no lo es, mostrará\r\nla suma.");
+        }
+    }
+}
