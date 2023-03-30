@@ -1,8 +1,11 @@
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace practico_1_3
 {
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -10,29 +13,94 @@ namespace practico_1_3
             InitializeComponent();
         }
         private int contador = 0;
-        private void btnCalcular_Click(object sender, System.EventArgs e)
-        {
-            if (txbPrimerNum.Text != "" || txbSegundoNum.Text != "" || txbTercerNum.Text != "")
-            {
-                int num1 = Convert.ToInt32(txbPrimerNum.Text);
-                int num2 = Convert.ToInt32(txbSegundoNum.Text);
-                int num3 = Convert.ToInt32(txbTercerNum.Text);
+        public ToolTip tip = new ToolTip();
 
-                if (num1 < 0)
-                {
-                    int res = num1 * num2 * num3;
-                    labResultado.Text = (res.ToString());
-                }
-                else
-                {
-                    int res = num1 + num2 + num3;
-                    labResultado.Text = (res.ToString());
-                }
+        private void txbPrimerNum_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txbPrimerNum.Text))
+            {
+
+                txbPrimerNum.BackColor = Color.Red;
+                tip.SetToolTip(txbPrimerNum, "Obligatorio llenar el campo");
             }
             else
             {
-                MessageBox.Show("Asegúrese de que los campos de texto marcados en rojo, estén llenos");
+
+                txbPrimerNum.BackColor = Color.Black;
             }
+        }
+
+        private void txbSegundoNum_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(txbSegundoNum.Text))
+            {
+
+                txbSegundoNum.BackColor = Color.Red;
+                tip.SetToolTip(txbSegundoNum, "Obligatorio llenar el campo");
+            }
+            else
+            {
+                txbSegundoNum.BackColor = Color.Black;
+            }
+        }
+
+        private void txbTercerNum_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbTercerNum.Text))
+            {
+                txbTercerNum.BackColor = Color.Red;
+                tip.SetToolTip(txbTercerNum, "Obligatorio llenar el campo");
+            }
+            else
+            {
+                txbTercerNum.BackColor = Color.Black;
+            }
+        }
+
+        private void btnCalcular_Click(object sender, System.EventArgs e)
+        {
+            if (this.ValidateChildren())
+            {
+                if (string.IsNullOrEmpty(txbPrimerNum.Text) || string.IsNullOrEmpty(txbSegundoNum.Text) || string.IsNullOrEmpty(txbTercerNum.Text))
+                {
+                    MessageBox.Show("Por favor, llene todos los campos marcados en rojo.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                double num1, num2, num3;
+
+                if (!double.TryParse(txbPrimerNum.Text, out num1) || !double.TryParse(txbSegundoNum.Text, out num2) || !double.TryParse(txbTercerNum.Text, out num3))
+                {
+                    MessageBox.Show("Por favor ingrese solo números válidos en los campos.", "Formato inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (num1 < 0)
+                {
+                    double res = num1 * num2 * num3;
+                    labResultado.Text = res.ToString();
+                }
+                else
+                {
+                    double res = num1 + num2 + num3;
+                    labResultado.Text = res.ToString();
+                }
+            }
+
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            txbPrimerNum.Text = "";
+            txbPrimerNum.BackColor = Color.Black;
+            txbSegundoNum.Text = "";
+            txbSegundoNum.BackColor = Color.Black;
+            txbTercerNum.Text = "";
+            txbTercerNum.BackColor = Color.Black;
+            labResultado.Text = "...";
+
 
         }
 
@@ -64,37 +132,37 @@ namespace practico_1_3
 
         private void txbPrimerNum_TextChanged(object sender, System.EventArgs e)
         {
-            if (txbPrimerNum.Text != "")
+            if (string.IsNullOrEmpty(txbPrimerNum.Text))
             {
-                label3.Visible = false;
+                label3.Visible = true;
             }
             else
             {
-                label3.Visible = true;
+                label3.Visible = false;
             }
         }
 
         private void txbSegundoNum_TextChanged(object sender, System.EventArgs e)
         {
-            if (txbSegundoNum.Text != "")
+            if (string.IsNullOrEmpty(txbSegundoNum.Text))
             {
-                label4.Visible = false;
+                label4.Visible = true;
             }
             else
             {
-                label4.Visible = true;
+                label4.Visible = false;
             }
         }
 
         private void txbTercerNum_TextChanged(object sender, System.EventArgs e)
         {
-            if (txbTercerNum.Text != "")
+            if (string.IsNullOrEmpty(txbTercerNum.Text))
             {
-                label5.Visible = false;
+                label5.Visible = true;
             }
             else
             {
-                label5.Visible = true;
+                label5.Visible = false;
             }
         }
 
@@ -109,6 +177,8 @@ namespace practico_1_3
             hint.SetToolTip(labElCreadoryYaEsta, "No, no pasará nada si apretas click");
 
             hint.Active = true;
+
+
 
         }
 
@@ -143,5 +213,7 @@ namespace practico_1_3
         {
             MessageBox.Show("Consigna:\nIdear una aplicación que solicite el ingreso de tres números; si el primero\r\nes negativo, debe mostrar el producto de los tres, y si no lo es, mostrará\r\nla suma.");
         }
+
+
     }
 }

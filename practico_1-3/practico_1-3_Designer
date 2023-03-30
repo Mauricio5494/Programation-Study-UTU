@@ -44,6 +44,7 @@ namespace practico_1_3
             this.labEasterEgg = new System.Windows.Forms.Label();
             this.labElCreadoryYaEsta = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCalcular
@@ -51,7 +52,7 @@ namespace practico_1_3
             this.btnCalcular.BackColor = System.Drawing.Color.Black;
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcular.ForeColor = System.Drawing.Color.White;
-            this.btnCalcular.Location = new System.Drawing.Point(123, 200);
+            this.btnCalcular.Location = new System.Drawing.Point(109, 197);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 0;
@@ -79,6 +80,7 @@ namespace practico_1_3
             this.txbSegundoNum.TabIndex = 2;
             this.txbSegundoNum.TextChanged += new System.EventHandler(this.txbSegundoNum_TextChanged);
             this.txbSegundoNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSegundoNum_KeyPress);
+            this.txbSegundoNum.Validating += new System.ComponentModel.CancelEventHandler(this.txbSegundoNum_Validating);
             // 
             // txbPrimerNum
             // 
@@ -91,6 +93,7 @@ namespace practico_1_3
             this.txbPrimerNum.TabIndex = 3;
             this.txbPrimerNum.TextChanged += new System.EventHandler(this.txbPrimerNum_TextChanged);
             this.txbPrimerNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrimerNum_KeyPress);
+            this.txbPrimerNum.Validating += new System.ComponentModel.CancelEventHandler(this.txbPrimerNum_Validating);
             // 
             // txbTercerNum
             // 
@@ -103,6 +106,7 @@ namespace practico_1_3
             this.txbTercerNum.TabIndex = 4;
             this.txbTercerNum.TextChanged += new System.EventHandler(this.txbTercerNum_TextChanged);
             this.txbTercerNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTercerNum_KeyPress);
+            this.txbTercerNum.Validating += new System.ComponentModel.CancelEventHandler(this.txbTercerNum_Validating);
             // 
             // labResultado
             // 
@@ -216,7 +220,7 @@ namespace practico_1_3
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(204, 200);
+            this.button1.Location = new System.Drawing.Point(190, 197);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(25, 23);
             this.button1.TabIndex = 15;
@@ -224,12 +228,26 @@ namespace practico_1_3
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.Black;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Location = new System.Drawing.Point(109, 226);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 16;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(492, 369);
+            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labElCreadoryYaEsta);
             this.Controls.Add(this.labEasterEgg);
@@ -248,6 +266,7 @@ namespace practico_1_3
             this.Controls.Add(this.btnCalcular);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LA 3";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -273,6 +292,7 @@ namespace practico_1_3
         private System.Windows.Forms.Label labEasterEgg;
         private System.Windows.Forms.Label labElCreadoryYaEsta;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }
 
