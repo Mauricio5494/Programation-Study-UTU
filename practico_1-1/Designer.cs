@@ -38,9 +38,9 @@ namespace práctico_1_1
             this.promedioLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numerosIngresadosLabel = new System.Windows.Forms.Label();
             this.ultimoPromedioLabel = new System.Windows.Forms.Label();
+            this.numerosIngresadosLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.resetButon = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -57,6 +57,8 @@ namespace práctico_1_1
             this.primerNumeroTextBox.TabIndex = 0;
             this.primerNumeroTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.primerNumeroTextBox.UseWaitCursor = true;
+            this.primerNumeroTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.primerNumeroTextBox_KeyPress);
+            this.primerNumeroTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.primerNumeroTextBox_Validating);
             // 
             // segundoNumeroTextBox
             // 
@@ -68,6 +70,7 @@ namespace práctico_1_1
             this.segundoNumeroTextBox.Size = new System.Drawing.Size(75, 20);
             this.segundoNumeroTextBox.TabIndex = 1;
             this.segundoNumeroTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.segundoNumeroTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.segundoNumeroTextBox_Validating);
             // 
             // tercerNumeroTextBox
             // 
@@ -79,6 +82,7 @@ namespace práctico_1_1
             this.tercerNumeroTextBox.Size = new System.Drawing.Size(75, 20);
             this.tercerNumeroTextBox.TabIndex = 2;
             this.tercerNumeroTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tercerNumeroTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.tercerNumeroTextBox_Validating);
             // 
             // cuartonumeroTextBox
             // 
@@ -90,6 +94,7 @@ namespace práctico_1_1
             this.cuartonumeroTextBox.Size = new System.Drawing.Size(75, 20);
             this.cuartonumeroTextBox.TabIndex = 3;
             this.cuartonumeroTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cuartonumeroTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.cuartonumeroTextBox_Validating);
             // 
             // calcularPromedioButton
             // 
@@ -156,14 +161,14 @@ namespace práctico_1_1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Historial";
             // 
-            // label4
+            // ultimoPromedioLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Números ingresados:";
+            this.ultimoPromedioLabel.AutoSize = true;
+            this.ultimoPromedioLabel.Location = new System.Drawing.Point(97, 49);
+            this.ultimoPromedioLabel.Name = "ultimoPromedioLabel";
+            this.ultimoPromedioLabel.Size = new System.Drawing.Size(16, 13);
+            this.ultimoPromedioLabel.TabIndex = 11;
+            this.ultimoPromedioLabel.Text = "...";
             // 
             // numerosIngresadosLabel
             // 
@@ -174,14 +179,14 @@ namespace práctico_1_1
             this.numerosIngresadosLabel.TabIndex = 10;
             this.numerosIngresadosLabel.Text = "...";
             // 
-            // ultimoPromedioLabel
+            // label4
             // 
-            this.ultimoPromedioLabel.AutoSize = true;
-            this.ultimoPromedioLabel.Location = new System.Drawing.Point(97, 49);
-            this.ultimoPromedioLabel.Name = "ultimoPromedioLabel";
-            this.ultimoPromedioLabel.Size = new System.Drawing.Size(16, 13);
-            this.ultimoPromedioLabel.TabIndex = 11;
-            this.ultimoPromedioLabel.Text = "...";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Números ingresados:";
             // 
             // label7
             // 
