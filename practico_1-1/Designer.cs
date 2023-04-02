@@ -70,6 +70,7 @@ namespace práctico_1_1
             this.segundoNumeroTextBox.Size = new System.Drawing.Size(75, 20);
             this.segundoNumeroTextBox.TabIndex = 1;
             this.segundoNumeroTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.segundoNumeroTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.segundoNumeroTextBox_KeyPress);
             this.segundoNumeroTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.segundoNumeroTextBox_Validating);
             // 
             // tercerNumeroTextBox
@@ -82,6 +83,7 @@ namespace práctico_1_1
             this.tercerNumeroTextBox.Size = new System.Drawing.Size(75, 20);
             this.tercerNumeroTextBox.TabIndex = 2;
             this.tercerNumeroTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tercerNumeroTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tercerNumeroTextBox_KeyPress);
             this.tercerNumeroTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.tercerNumeroTextBox_Validating);
             // 
             // cuartonumeroTextBox
@@ -94,6 +96,7 @@ namespace práctico_1_1
             this.cuartonumeroTextBox.Size = new System.Drawing.Size(75, 20);
             this.cuartonumeroTextBox.TabIndex = 3;
             this.cuartonumeroTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cuartonumeroTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cuartonumeroTextBox_KeyPress);
             this.cuartonumeroTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.cuartonumeroTextBox_Validating);
             // 
             // calcularPromedioButton
