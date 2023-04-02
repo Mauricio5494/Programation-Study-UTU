@@ -31,17 +31,19 @@ namespace Practico_1_5
             this.btnCalcular = new System.Windows.Forms.Button();
             this.imgbPoroOldPhoto = new System.Windows.Forms.Label();
             this.txbAñoViciestoOno = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labRes = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCalcular
             // 
             this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcular.Location = new System.Drawing.Point(509, 156);
+            this.btnCalcular.Location = new System.Drawing.Point(71, 147);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 0;
@@ -53,7 +55,7 @@ namespace Practico_1_5
             // 
             this.imgbPoroOldPhoto.AutoSize = true;
             this.imgbPoroOldPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.imgbPoroOldPhoto.Location = new System.Drawing.Point(506, 105);
+            this.imgbPoroOldPhoto.Location = new System.Drawing.Point(68, 96);
             this.imgbPoroOldPhoto.Name = "imgbPoroOldPhoto";
             this.imgbPoroOldPhoto.Size = new System.Drawing.Size(82, 13);
             this.imgbPoroOldPhoto.TabIndex = 1;
@@ -63,29 +65,18 @@ namespace Practico_1_5
             // 
             this.txbAñoViciestoOno.BackColor = System.Drawing.Color.Black;
             this.txbAñoViciestoOno.ForeColor = System.Drawing.Color.White;
-            this.txbAñoViciestoOno.Location = new System.Drawing.Point(506, 121);
+            this.txbAñoViciestoOno.Location = new System.Drawing.Point(68, 112);
             this.txbAñoViciestoOno.Name = "txbAñoViciestoOno";
             this.txbAñoViciestoOno.Size = new System.Drawing.Size(100, 20);
             this.txbAñoViciestoOno.TabIndex = 2;
             this.txbAñoViciestoOno.Validating += new System.ComponentModel.CancelEventHandler(this.txbAñoViciestoOno_Validating);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Image = global::Practico_1_5.Properties.Resources.poroto;
-            this.pictureBox1.Location = new System.Drawing.Point(-11, -49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(495, 428);
+            this.label1.Location = new System.Drawing.Point(187, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 19);
             this.label1.TabIndex = 4;
@@ -96,7 +87,7 @@ namespace Practico_1_5
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(650, 156);
+            this.label2.Location = new System.Drawing.Point(212, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 5;
@@ -106,18 +97,40 @@ namespace Practico_1_5
             // 
             this.labRes.AutoSize = true;
             this.labRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labRes.Location = new System.Drawing.Point(714, 156);
+            this.labRes.Location = new System.Drawing.Point(276, 147);
             this.labRes.Name = "labRes";
             this.labRes.Size = new System.Drawing.Size(16, 13);
             this.labRes.TabIndex = 6;
             this.labRes.Text = "...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Image = global::Practico_1_5.Properties.Resources.Screenshot_65;
+            this.pictureBox1.Location = new System.Drawing.Point(-11, -49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Image = global::Practico_1_5.Properties.Resources.Screenshot_65;
+            this.pictureBox2.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(95, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(944, 450);
+            this.ClientSize = new System.Drawing.Size(496, 286);
             this.Controls.Add(this.labRes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -125,6 +138,7 @@ namespace Practico_1_5
             this.Controls.Add(this.imgbPoroOldPhoto);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
@@ -132,6 +146,7 @@ namespace Practico_1_5
             this.Text = "Calculadora de Calendario Gregoriano Viciesto";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +161,7 @@ namespace Practico_1_5
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labRes;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

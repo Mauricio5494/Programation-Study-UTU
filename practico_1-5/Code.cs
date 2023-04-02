@@ -15,8 +15,8 @@ namespace Practico_1_5
         public ToolTip hint = new ToolTip();
         private void Form1_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = AjustarOpacidad(pictureBox1.Image, 0.2f);
-            hint.SetToolTip(pictureBox1, "Meción honorífica al Profesor: 'Joge Ferreira Gallino' apodado como 'Poroto'\npor tantos años de aporte a la UTU.");
+            pictureBox2.Image = AjustarOpacidad(pictureBox1.Image, 0.7f);
+            hint.SetToolTip(pictureBox2, "Un lindo recuerdo.... Bueno, no.");
         }
 
         public static Bitmap AjustarOpacidad(System.Drawing.Image image, float opacidad)
