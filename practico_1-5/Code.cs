@@ -13,6 +13,7 @@ namespace Practico_1_5
         }
 
         public ToolTip hint = new ToolTip();
+        public int año;
         private void Form1_Load(object sender, EventArgs e)
         {
             pictureBox2.Image = AjustarOpacidad(pictureBox1.Image, 0.7f);
@@ -61,15 +62,25 @@ namespace Practico_1_5
                 }
                 else
                 {
-                    int año = (int)Convert.ToUInt64(txbAñoViciestoOno.Text);
-                    if ((año % 4 == 0 && año % 100 != 0) || año % 400 == 0)
+                    
+                    if (Convert.ToInt64(txbAñoViciestoOno.Text) >= 4294967295)
                     {
-                        labRes.Text = "Es un año Biciesto";
+                        MessageBox.Show("Por favor, ponga un número entre 0 y 4.294.967.295", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        labRes.Text = "No es un año Biciesto";
+                        
+
+                        if ((año % 4 == 0 && año % 100 != 0) || año % 400 == 0)
+                        {
+                            labRes.Text = "Es un año Biciesto";
+                        }
+                        else
+                        {
+                            labRes.Text = "No es un año Biciesto";
+                        }
                     }
+
                 }
 
 
