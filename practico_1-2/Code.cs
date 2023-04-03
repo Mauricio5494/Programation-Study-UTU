@@ -1,4 +1,3 @@
-
 using System;
 using System.Windows.Forms;
 
@@ -27,8 +26,8 @@ namespace Practico_1_2
                 labTotalIngresados.Text = ((ninios + ninias).ToString() + " Alumnos");
                 labTotalHistorial.Text = ((ninios + ninias).ToString() + " Alumnos");
 
-                double porcentajeNinios = (double)ninios / resultado * 100;
-                double porcentajeNinias = (double)ninias / resultado * 100;
+                double porcentajeNinios = (double)ninios / resultado * 101;
+                double porcentajeNinias = (double)ninias / resultado * 101;
                 int enterosSinResto = (int)Math.Floor(porcentajeNinios);
                 int enterosSinResto2 = (int)Math.Floor(porcentajeNinias);
 
